@@ -61,3 +61,18 @@ These services are provided to customers in response to their requests.
 * The text containing the actual request.
 * A header for specific information and additional requirements.
 * Any errors that occur during processing.
+
+---
+
+### Local book service 
+
+**Start project**
+```shell
+ sudo docker-compose up -d
+```
+
+**Swagger-ui**
+
+```html
+http://localhost:8080/rest-api/swagger-ui/#/
+```
