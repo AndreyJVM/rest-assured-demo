@@ -1,7 +1,7 @@
 ###  [RestAssured ](https://rest-assured.io/)
 
 Testing and validating REST services in Java is harder than in dynamic languages such as Ruby and Groovy.
-RESTAssured brings the simplicity of using these languages into the Java domain.
+REST Assured brings the simplicity of using these languages into the Java domain.
 
 ### API
 Application Programming Interface, or API, is a way for different software components to communicate and exchange data. 
@@ -27,8 +27,20 @@ These services are provided to customers in response to their requests.
 
 #### HTTP Response Codes
 
-* 1xx - Informational responses.
-* 2xx - Successfully processed responses.
-* 3xx - Redirection.
-* 4xx - Client errors.
-* 5xx - Server errors.
+* **1xx - Informational responses.**
+* **2xx - Successfully processed responses.**
+  * **200 OK** - the request was completed successfully.
+  * **201 Created** - the request was successful and the resource was created.
+  * **202 Accepted** - the server accepted the client's request, but did not complete its processing.
+* **3xx - Redirection.**
+  * **301 Moved Permanently** - The requested resource has been permanently moved to another URL, and the client must access the new URL to access the resource.
+  * **302 Found** - the resource has been temporarily moved to another URL, and the client must temporarily use the new URL.
+* **4xx - Client errors.**
+  * **400 Bad Request** - the request was not executed due to an error in the request, for example, a typo or lack of data.
+  * **401 Unauthorized** - the request was not executed because the client did not authenticate or does not have access rights to the requested resource.
+  * **403 Forbidden** - the request was not executed because the client is authenticated but not authorized to access the requested resource.
+  * **404 Not Found** - the request was not executed because the server could not find the requested resource.
+* **5xx - Server errors.**
+  * **500 Internal Server Error** - the request was not executed due to an unexpected problem with the server.
+  * **502 Bad Gateway** - the request was not executed due to an incorrect response from the upstream server.
+  * **503 Service Unavailable** - The server was unable to process the request due to maintenance, overload, or other temporary interference.
