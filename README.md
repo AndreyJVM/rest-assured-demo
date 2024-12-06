@@ -48,3 +48,16 @@ These services are provided to customers in response to their requests.
 
 ---
 
+### SOAP  Simple Object Access Protocol
+
+**Advantages**
+* Language and platform independence.
+* Connectivity with various transport protocols.
+* Built-in error handling.
+* A number of security extensions.
+
+**Disadvantages**
+* The "_envelope_" tag at the beginning and at the end.
+* The text containing the actual request.
+* A header for specific information and additional requirements.
+* Any errors that occur during processing.
