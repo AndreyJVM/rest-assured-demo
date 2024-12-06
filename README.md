@@ -1,7 +1,7 @@
 ###  [RestAssured ](https://rest-assured.io/)
 
 Testing and validating REST services in Java is harder than in dynamic languages such as Ruby and Groovy.
-REST Assured brings the simplicity of using these languages into the Java domain.
+RESTAssured brings the simplicity of using these languages into the Java domain.
 
 ### API
 Application Programming Interface, or API, is a way for different software components to communicate and exchange data. 
@@ -23,3 +23,12 @@ The client sends a request to the server and receives a response.
 A server is a computer system or application that serves as a data source. It is capable of transmitting 
 information over a network, including the Internet. The functionality provided by the server is called services.
 These services are provided to customers in response to their requests.
+
+
+#### HTTP Response Codes
+
+* 1xx - Informational responses.
+* 2xx - Successfully processed responses.
+* 3xx - Redirection.
+* 4xx - Client errors.
+* 5xx - Server errors.
