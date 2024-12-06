@@ -24,8 +24,9 @@ A server is a computer system or application that serves as a data source. It is
 information over a network, including the Internet. The functionality provided by the server is called services.
 These services are provided to customers in response to their requests.
 
+---
 
-#### HTTP Response Codes
+### HTTP Response Codes
 
 * **1xx - Informational responses.**
 * **2xx - Successfully processed responses.**
@@ -44,3 +45,6 @@ These services are provided to customers in response to their requests.
   * **500 Internal Server Error** - the request was not executed due to an unexpected problem with the server.
   * **502 Bad Gateway** - the request was not executed due to an incorrect response from the upstream server.
   * **503 Service Unavailable** - The server was unable to process the request due to maintenance, overload, or other temporary interference.
+
+---
+
