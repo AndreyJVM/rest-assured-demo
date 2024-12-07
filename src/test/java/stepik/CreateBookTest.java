@@ -15,8 +15,8 @@ public class CreateBookTest {
                 "The story about Tom Sawyer.",
                 "Mark Twain", 350, 10, Category.Adventures);
 
-        given().baseUri("http://localhost:8080").
-                basePath("/rest-api/").
+        given().baseUri(TestConfig.BaseURI.value).
+                basePath(TestConfig.BasePath.value).
                 contentType(ContentType.JSON).
                 body(book).
                 log().all().
