@@ -18,6 +18,7 @@
         <testng.version>6.14.3</testng.version>
         <jackson-databind.version>2.13.2.2</jackson-databind.version>
         <lombok.vresion>1.18.36</lombok.vresion>
+        <jackson-datatype-jsr310.version>2.13.2</jackson-datatype-jsr310.version>
     </properties>
 
     <dependencies>
@@ -41,6 +42,11 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.vresion}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson-datatype-jsr310.version}</version>
         </dependency>
     </dependencies>
 

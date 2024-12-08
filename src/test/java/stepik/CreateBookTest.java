@@ -20,14 +20,10 @@ public class CreateBookTest {
 
 
         testClient.createBook(book)
-                .assertThat()
-                .statusCode(201)
-                .body("id", Matchers.notNullValue())
-                .body("title", Matchers.equalTo("The Adventures of Tom Sawyer"))
-                .body("description", Matchers.equalTo("The story about Tom Sawyer."))
-                .body("author", Matchers.equalTo("Mark Twain"))
-                .body("price", Matchers.equalTo(350))
-                .body("count", Matchers.equalTo(10))
-                .log().all();
+                .checkStatusCode(201)
+                .checkIdNotNull()
+                .checkLastUpdated()
+                .checkBook(book)
+                .checkBook(book);
     }
 }
