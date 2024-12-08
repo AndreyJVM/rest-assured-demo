@@ -35,7 +35,7 @@ public class BookValidateResponse {
     }
 
     public BookValidateResponse checkBook(Book executed) {
-        assertEquals(model, executed);
+        assertEquals(new Book(model), executed);
         return this;
     }
 

@@ -1,7 +1,5 @@
 package stepik;
 
-
-import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 import stepik.properties.Book;
 import stepik.properties.Category;
@@ -23,7 +21,6 @@ public class CreateBookTest {
                 .checkStatusCode(201)
                 .checkIdNotNull()
                 .checkLastUpdated()
-                .checkBook(book)
                 .checkBook(book);
     }
 }

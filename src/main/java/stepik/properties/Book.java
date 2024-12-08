@@ -2,7 +2,6 @@ package stepik.properties;
 
 import lombok.*;
 
-
 @Getter
 @Setter
 @ToString
