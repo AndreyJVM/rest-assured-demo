@@ -40,4 +40,14 @@ public class TestClient {
 
         return new BookValidateResponse(response);
     }
+
+    public BookValidateResponse read(Integer id) {
+        Response response = getRequestSpecification().when()
+                .get("/books/{id}", id);
+
+        response.then().log().all();
+
+        return new BookValidateResponse(response);
+    }
+
 }
