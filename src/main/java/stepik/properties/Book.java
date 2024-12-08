@@ -1,4 +1,4 @@
-package stepik;
+package stepik.properties;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

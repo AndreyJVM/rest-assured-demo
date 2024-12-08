@@ -1,4 +1,4 @@
-package stepik;
+package stepik.properties;
 
 public enum Category {
     Adventures,

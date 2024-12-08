@@ -3,6 +3,9 @@ package stepik;
 import io.restassured.http.ContentType;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
+import stepik.properties.Book;
+import stepik.properties.Category;
+import stepik.properties.TestConfig;
 
 import static io.restassured.RestAssured.given;
 
@@ -15,11 +18,7 @@ public class CreateBookTest {
                 "The story about Tom Sawyer.",
                 "Mark Twain", 350, 10, Category.Adventures);
 
-        given().baseUri(TestConfig.BaseURI.value).
-                basePath(TestConfig.BasePath.value).
-                contentType(ContentType.JSON).
-                body(book).
-                log().all().
+
         when().post("books").
         then().assertThat().
                 statusCode(201).
