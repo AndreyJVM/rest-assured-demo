@@ -39,7 +39,7 @@ public class BookValidateResponse {
         return this;
     }
 
-    public BookValidateResponse checkId () {
+    public BookValidateResponse checkId(Integer id) {
         response.then().body("id", Matchers.notNullValue());
         return this;
     }
