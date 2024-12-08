@@ -1,10 +1,12 @@
 package stepik.rest;
 
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import lombok.AllArgsConstructor;
 import stepik.properties.Book;
+import stepik.properties.BookValidateResponse;
 import stepik.properties.TestConfig;
 
 import static io.restassured.RestAssured.given;
@@ -31,11 +33,12 @@ public class TestClient {
                 .body(book);
     }
 
-    public ValidatableResponse createBook(Book book) {
-        return getRequestSpecification(book)
-                .when()
-                .post("/books")
-                .then()
-                .log().all();
+    public BookValidateResponse createBook(Book book) {
+        Response response = getRequestSpecification(book).when()
+                .post("/books");
+
+        response.then().log().all();
+
+        return new BookValidateResponse(response);
     }
 }
