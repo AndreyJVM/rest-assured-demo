@@ -4,6 +4,8 @@ import io.restassured.response.Response;
 import lombok.SneakyThrows;
 import org.hamcrest.Matchers;
 
+import java.util.regex.MatchResult;
+
 import static org.testng.AssertJUnit.assertEquals;
 
 public class BookValidateResponse {
@@ -24,13 +26,11 @@ public class BookValidateResponse {
 
     public BookValidateResponse checkIdNotNull() {
         response.then().body("id", Matchers.notNullValue());
-
         return this;
     }
 
     public BookValidateResponse checkLastUpdated() {
         response.then().body("lastUpdated", Matchers.notNullValue());
-
         return this;
     }
 
@@ -39,4 +39,12 @@ public class BookValidateResponse {
         return this;
     }
 
+    public BookValidateResponse checkId () {
+        response.then().body("id", Matchers.notNullValue());
+        return this;
+    }
+
+    public Integer getId() {
+        return response.jsonPath().getInt("id");
+    }
 }
