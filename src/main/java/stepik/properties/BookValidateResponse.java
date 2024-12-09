@@ -4,8 +4,6 @@ import io.restassured.response.Response;
 import lombok.SneakyThrows;
 import org.hamcrest.Matchers;
 
-import java.util.regex.MatchResult;
-
 import static org.testng.AssertJUnit.assertEquals;
 
 public class BookValidateResponse {
@@ -46,5 +44,12 @@ public class BookValidateResponse {
 
     public Integer getId() {
         return response.jsonPath().getInt("id");
+    }
+
+    public BookValidateResponse checkErrorResponse(BookResponse expected) {
+        response.then().body("timestamp", Matchers.notNullValue());
+        assertEquals(model, expected);
+
+        return this;
     }
 }
