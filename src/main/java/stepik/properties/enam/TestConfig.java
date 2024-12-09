@@ -1,4 +1,6 @@
-package stepik.properties;
+package stepik.properties.enam;
+
+import stepik.properties.Configuration;
 
 public enum TestConfig {
 

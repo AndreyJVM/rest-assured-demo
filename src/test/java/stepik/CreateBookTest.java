@@ -3,15 +3,13 @@ package stepik;
 import org.testng.annotations.Test;
 import stepik.data.provider.MyDataProvider;
 import stepik.properties.Book;
+import stepik.properties.BookStoreTestCase;
 import stepik.properties.BookValidateResponse;
-import stepik.rest.TestClient;
 
-public class CreateBookTest {
+public class CreateBookTest extends BookStoreTestCase {
 
     @Test(dataProvider = "dataProviderCreateBook", dataProviderClass = MyDataProvider.class)
     public void createBookTest(Book book) {
-
-        TestClient testClient = new TestClient();
 
         BookValidateResponse response = testClient.createBook(book)
                         .checkStatusCode(201)

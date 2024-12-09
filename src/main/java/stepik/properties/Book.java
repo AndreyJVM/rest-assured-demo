@@ -2,6 +2,7 @@ package stepik.properties;
 
 import lombok.*;
 import lombok.experimental.Accessors;
+import stepik.properties.enam.Category;
 
 @Accessors(chain = true)
 @NoArgsConstructor

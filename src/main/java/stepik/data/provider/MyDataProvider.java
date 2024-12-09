@@ -3,7 +3,7 @@ package stepik.data.provider;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.DataProvider;
 import stepik.properties.Book;
-import stepik.properties.Category;
+import stepik.properties.enam.Category;
 
 public class MyDataProvider {
 

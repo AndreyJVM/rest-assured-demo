@@ -6,7 +6,7 @@ import io.restassured.specification.RequestSpecification;
 import lombok.AllArgsConstructor;
 import stepik.properties.Book;
 import stepik.properties.BookValidateResponse;
-import stepik.properties.TestConfig;
+import stepik.properties.enam.TestConfig;
 
 import static io.restassured.RestAssured.given;
 
