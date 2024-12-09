@@ -1,14 +1,12 @@
 package stepik;
 
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import stepik.data.provider.MyDataProvider;
 
 public class DataProviderTest {
 
-    @DataProvider(name = "dataProvider")
-    public Object[][] dataProviderMethods() {
-        return new Object[][]{
-                {1, "one"},
-                {2, "two"}
-        };
+    @Test(dataProvider = "dataProvider", dataProviderClass = MyDataProvider.class)
+    public void testSample(Integer digit, String word) {
+        System.out.printf("%s is %s\n", digit, word);
     }
 }
