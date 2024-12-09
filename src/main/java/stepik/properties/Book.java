@@ -1,13 +1,15 @@
 package stepik.properties;
 
 import lombok.*;
+import lombok.experimental.Accessors;
 
+@Accessors(chain = true)
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
-@NoArgsConstructor
-@AllArgsConstructor
 public class Book {
     private String title;
     private String description;
@@ -23,5 +25,11 @@ public class Book {
         this.price = book.price;
         this.count = book.count;
         this.category = book.category;
+    }
+
+    public static Book defaultOf() {
+        return new Book("The Adventures of Tom Sawyer",
+                "The story about Tom Sawyer.",
+                "Mark Twain", 350, 10, Category.Adventures);
     }
 }

@@ -1,22 +1,17 @@
 package stepik;
 
 import org.testng.annotations.Test;
+import stepik.data.provider.MyDataProvider;
 import stepik.properties.Book;
 import stepik.properties.BookValidateResponse;
-import stepik.properties.Category;
 import stepik.rest.TestClient;
 
 public class CreateBookTest {
 
-    @Test
-    public void createBookTest() {
+    @Test(dataProvider = "dataProviderCreateBook", dataProviderClass = MyDataProvider.class)
+    public void createBookTest(Book book) {
 
         TestClient testClient = new TestClient();
-
-        Book book = new Book("The Adventures of Tom Sawyer",
-                "The story about Tom Sawyer.",
-                "Mark Twain", 350, 10, Category.Adventures);
-
 
         BookValidateResponse response = testClient.createBook(book)
                         .checkStatusCode(201)
