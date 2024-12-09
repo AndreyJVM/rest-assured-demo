@@ -18,8 +18,8 @@ public class MyDataProvider {
     @DataProvider(name = "dataProviderCreateBook")
     public static Object[][] dataProviderCreateBookMethods() {
 
-        return new Object[][] {
-                { Book.defaultOf() },
+        return new Object[][]{
+                {Book.defaultOf()},
                 // title min = 3
                 {Book.defaultOf().setTitle(RandomStringUtils.randomAlphabetic(3))},
                 // title max = 256
@@ -41,6 +41,30 @@ public class MyDataProvider {
                 {Book.defaultOf().setCategory(Category.Fiction)},
                 {Book.defaultOf().setCategory(Category.Horror)},
                 {Book.defaultOf().setCategory(Category.Thriller)},
+        };
+    }
+
+    @DataProvider(name = "createBooksNegative")
+    public static Object[][] createBooksNegativeMethod() {
+        return new Object[][]{
+                // title < 3
+                {Book.defaultOf().setTitle(RandomStringUtils.randomAlphabetic(2))},
+                // title > max = 257
+                {Book.defaultOf().setTitle(RandomStringUtils.randomAlphabetic(257))},
+                // description < min = 2
+                {Book.defaultOf().setDescription(RandomStringUtils.randomAlphabetic(2))},
+                // description > max = 513
+                {Book.defaultOf().setDescription(RandomStringUtils.randomAlphabetic(513))},
+                // author < min = 2
+                {Book.defaultOf().setAuthor(RandomStringUtils.randomAlphabetic(2))},
+                // author > max = 101
+                {Book.defaultOf().setAuthor(RandomStringUtils.randomAlphabetic(101))},
+                // price = -1
+                {Book.defaultOf().setPrice(-1)},
+                // count = -1
+                {Book.defaultOf().setCount(-1)},
+                // categories not from enum = Unknown
+                {Book.defaultOf().setCategory(Category.Unknown)}
         };
     }
 }

@@ -5,5 +5,7 @@ public enum Category {
     Detective,
     Fiction,
     Horror,
-    Thriller;
+    Thriller,
+    // Not support Unknown test value
+    Unknown
 }
