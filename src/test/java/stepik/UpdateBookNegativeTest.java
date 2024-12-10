@@ -13,18 +13,18 @@ public class UpdateBookNegativeTest extends BookStoreTestCase {
     @BeforeClass
     public void setUp() {
         id = testClient
-                .createBook(Book.defaultOf())
+                .postBook(Book.defaultOf())
                 .checkStatusCode(201)
                 .getId();
     }
 
     @Test(dataProvider = "createBooksNegative", dataProviderClass = MyDataProvider.class)
     public void updateBookNegative(Book book) {
-        testClient.update(id, book)
+        testClient.putBook(id, book)
                 .checkStatusCode(400)
                 .checkErrorResponse(BookResponse.updateError400(id));
 
-        testClient.read(id)
+        testClient.getBook(id)
                 .checkStatusCode(200)
                 .checkLastUpdated()
                 .checkBook(Book.defaultOf());

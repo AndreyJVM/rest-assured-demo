@@ -32,7 +32,7 @@ public class TestClient {
                 .body(book);
     }
 
-    public BookValidateResponse createBook(Book book) {
+    public BookValidateResponse postBook(Book book) {
         Response response = getRequestSpecification(book).when()
                 .post("/books");
 
@@ -41,7 +41,7 @@ public class TestClient {
         return new BookValidateResponse(response);
     }
 
-    public BookValidateResponse read(Integer id) {
+    public BookValidateResponse getBook(Integer id) {
         Response response = getRequestSpecification().when()
                 .get("/books/{id}", id);
 
@@ -50,7 +50,7 @@ public class TestClient {
         return new BookValidateResponse(response);
     }
 
-    public BookValidateResponse update(Integer id, Book book) {
+    public BookValidateResponse putBook(Integer id, Book book) {
         Response response = getRequestSpecification(book)
                 .when()
                 .put("/books/{id}", id);
@@ -61,4 +61,14 @@ public class TestClient {
         return new BookValidateResponse(response);
     }
 
+    public BookValidateResponse deleteBook(Integer id) {
+        Response response = getRequestSpecification()
+                .when()
+                .delete("/books/{id}", id);
+
+        response.then()
+                .log().all();
+
+        return new BookValidateResponse(response);
+    }
 }

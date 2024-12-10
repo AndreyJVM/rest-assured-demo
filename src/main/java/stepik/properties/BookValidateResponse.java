@@ -13,7 +13,9 @@ public class BookValidateResponse {
     @SneakyThrows
     public BookValidateResponse(Response response) {
         this.response = response;
-        model = response.as(BookResponse.class);
+        if (response.asString().length() > 0) {
+            model = response.as(BookResponse.class);
+        }
     }
 
     public BookValidateResponse checkStatusCode(int statusCode) {

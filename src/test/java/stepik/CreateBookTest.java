@@ -11,13 +11,13 @@ public class CreateBookTest extends BookStoreTestCase {
     @Test(dataProvider = "dataProviderCreateBook", dataProviderClass = MyDataProvider.class)
     public void createBookTest(Book book) {
 
-        BookValidateResponse response = testClient.createBook(book)
+        BookValidateResponse response = testClient.postBook(book)
                         .checkStatusCode(201)
                         .checkIdNotNull()
                         .checkLastUpdated()
                         .checkBook(book);
 
-        testClient.read(response.getId())
+        testClient.getBook(response.getId())
                 .checkStatusCode(200)
                 .checkId(response.getId())
                 .checkLastUpdated()
