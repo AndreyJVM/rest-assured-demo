@@ -50,4 +50,15 @@ public class TestClient {
         return new BookValidateResponse(response);
     }
 
+    public BookValidateResponse update(Integer id, Book book) {
+        Response response = getRequestSpecification(book)
+                .when()
+                .put("/books/{id}", id);
+
+        response.then()
+                .log().all();
+
+        return new BookValidateResponse(response);
+    }
+
 }
