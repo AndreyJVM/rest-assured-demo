@@ -20,9 +20,17 @@ public class BookResponse extends Book {
     private String error;
     private String path;
 
-    public static BookResponse createError400() {
+    public static BookResponse create400(String path) {
         return new BookResponse().setStatus(400).
                 setError("Bad Request").
-                setPath("/rest-api/books");
+                setPath(path);
+    }
+
+    public static BookResponse createError400() {
+        return create400("/rest-api/books");
+    }
+
+    public static BookResponse updateError400(Integer id) {
+        return create400(String.format("/rest-api/books/%s", id));
     }
 }
