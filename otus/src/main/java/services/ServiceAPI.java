@@ -2,6 +2,7 @@ package services;
 
 import dto.UserDTO;
 import io.restassured.http.ContentType;
+import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.given;
@@ -19,8 +20,8 @@ public class ServiceAPI {
                 .log().all();
     }
 
-    public void createUser(UserDTO user) {
-        given(specification)
+    public ValidatableResponse createUser(UserDTO user) {
+        return given(specification)
                 .basePath(BASE_PATH)
                 .body(user)
                 .when()
