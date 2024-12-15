@@ -4,10 +4,12 @@ import dto.UserDTO;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
-import org.testng.annotations.Test;
 import services.ServiceAPI;
+import org.junit.jupiter.api.Test;
+
 
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.lessThan;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CreateUserTest {
@@ -78,7 +80,7 @@ public class CreateUserTest {
                 .body("code", equalTo(200))
                 .body("type", equalTo("unknown"))
                 .body("message", equalTo("494"))
+                .time(lessThan(1400l))
                 .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schema/userResponse.json"));
-
     }
 }
